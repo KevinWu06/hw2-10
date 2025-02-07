@@ -9,7 +9,6 @@ int main(int argc, char **argv) {
     unsigned int y = (unsigned int) x;
     printf("unsigned decimal : %u\n", y);
     printf("hexidecimal      : %x\n", x);
-    int m;
     int binary[32];
     for(int i = 0; i < 32; i++){
         if(x & (1 << i)){
