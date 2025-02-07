@@ -12,8 +12,8 @@ int main(int argc, char **argv) {
 	if(n == 0 && m == 0){
 		printf("gcd(0, 0) = undefined\n");
 	} else {
-        printf("Iterative: gcd(%d, %d) = %d\n%", n, m, gcd_iterative(m, n));
-        printf("Recursive: gcd(%d, %d) = %d\n%", n, m, gcd_recursive(m, n));
+        printf("Iterative: gcd(%d, %d) = %d\n", n, m, gcd_iterative(m, n));
+        printf("Recursive: gcd(%d, %d) = %d\n", n, m, gcd_recursive(m, n));
     }
     return EXIT_SUCCESS;
 }
