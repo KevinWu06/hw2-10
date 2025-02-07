@@ -4,7 +4,7 @@
 #include "recursive.h"
 
 int main(int argc, char **argv) {
-	if(argc != 3){
+   	if(argc != 3){
 		fprintf(stderr, "Usage: ./gcd <integer m> <integer n>\n");
 		return EXIt_FAILURE;
 	}
