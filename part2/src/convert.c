@@ -11,7 +11,6 @@ int main(int argc, char **argv) {
     printf("hexidecimal      : %x\n", x);
     int m;
     int binary[32];
-    int i = 0;
     for(int i = 0; i < 32; i++){
         m = x;
         x = x >> 1;
