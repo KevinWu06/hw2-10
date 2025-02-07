@@ -7,15 +7,15 @@ int main(int argc, char **argv) {
     scanf("%d", &x);
     printf("\nsigned decimal   : %d\n", x);
     unsigned int y = (unsigned int) x;
-    printf("unsigned decimal   : %u\n", y);
-    printf("hexidecimal        : %x\n", x);
+    printf("unsigned decimal : %u\n", y);
+    printf("hexidecimal      : %x\n", x);
     int m;
     int binary[32];
     int i = 0;
     for(int i = 0; i < 32; i++){
         m = x;
         x = x >> 1;
-        if (2*x = m) {
+        if (2*x == m) {
             binary[31 - i] = 0;
         }
         else{
@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
         }
     }
     char ch;
-    printf("binary             : ");
+    printf("binary           : ");
     for(int i = 0; i <8; i++) {
         for(int j = 0; j < 4; j++) {
             if(binary[4*i+j] == 1) {
@@ -35,7 +35,10 @@ int main(int argc, char **argv) {
             putc(ch, stdout);
         }
         if(i != 7){
-            printf(" ");
+            putc(' ', stdout);
+        }
+        else{
+            putc('\n', stdout);
         }
     }
     return EXIT_SUCCESS;
