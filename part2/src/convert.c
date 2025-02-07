@@ -6,5 +6,30 @@ int main(int argc, char **argv) {
     printf("Enter an integer : ");
     scanf("%d", &x);
     printf("\nsigned decimal   : %d\n", x);
+    unsigned int y = (unsigned int) x;
+    printf("unsigned decimal   : %u\n", y);
+    printf("hexidecimal        : %x\n", x);
+    int m;
+    binary[32];
+    int i = 0;
+    for(int i = 0; i < 32; i++){
+        m = x;
+        x = x >> 1;
+        if (2*x = m) {
+            binary[31 - i] = 0;
+        }
+        else{
+            binary[31 - i] = 1;
+        }
+    }
+    printf("binary             : ");
+    for(int i = 0; i <8; i++) {
+        for(int j = 0; j < 4; j++) {
+            printf("%d", binary[4*i+j]);
+        }
+        if(i != 7){
+            printf(" ");
+        }
+    }
     return EXIT_SUCCESS;
 }
