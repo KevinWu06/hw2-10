@@ -12,13 +12,11 @@ int main(int argc, char **argv) {
     int m;
     int binary[32];
     for(int i = 0; i < 32; i++){
-        m = x;
-        x = x >> 1;
-        if (2*x == m) {
-            binary[31 - i] = 0;
+        if(x & (1 << i)){
+            binary[31 - i] = 1;
         }
         else{
-            binary[31 - i] = 1;
+            binary[31 - i] = 0;
         }
     }
     char ch;
