@@ -4,7 +4,7 @@ CFLAGS = -g -Wall -Werror -pedantic-errors
 TARGET = gcd
 
 # Source and Object Files
-SRCS = iterative.c recursive.c
+SRCS = $(wildcard *.c)
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 .PHONY: all clean
@@ -13,12 +13,12 @@ OBJS = $(patsubst %.c,%.o,$(SRCS))
 all: $(TARGET)
 
 # Link object files into final executable
-$(TARGET): $(OBJS) gcd.o
-	$(CC) $(CFLAGS) $(OBJS) gcd.o -o $@
-
-# Compile .c files into .o files
+$(TARGET): $(OBJS) 
+	$(CC) $(CFLAGS) $(OBJS) -o $@
+%.o: %.c %.h
+	$(CC) $(CFLAGS) -c -o $@ $<
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 # Clean build artifacts
 clean:
-	rm -f $(OBJS) gcd.o $(TARGET)
+	rm -f $(OBJS) $(TARGET)
