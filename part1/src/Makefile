@@ -1,16 +1,25 @@
+# Compiler and Flags
 CC = gcc
-TARGET = gcd
-C_FILES = $(wildcard *.c)
-OBJS = $(patsubst %.c,%.o,$(C_FILES))
 CFLAGS = -g -Wall -Werror -pedantic-errors
-LDLIBS = -lm
+TARGET = gcd
+
+# Source and Object Files
+SRCS = iterative.c recursive.c
+OBJS = $(patsubst %.c,%.o,$(SRCS))
+
 .PHONY: all clean
+
+# Default target: Build the executable
 all: $(TARGET)
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDLIBS)
-%.o: %.c %.h
-	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Link object files into final executable
+$(TARGET): $(OBJS) gcd.o
+	$(CC) $(CFLAGS) $(OBJS) gcd.o -o $@
+
+# Compile .c files into .o files
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Clean build artifacts
 clean:
-	rm -f $(OBJS) $(TARGET) $(TARGET).exe
+	rm -f $(OBJS) gcd.o $(TARGET)
