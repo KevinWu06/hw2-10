@@ -1,4 +1,4 @@
-#include "interative.h"
+#include "iterative.h"
 
 int gcd_iterative(int m, int n){
     m = abs(m), n = abs(n);

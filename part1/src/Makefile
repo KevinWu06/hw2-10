@@ -19,7 +19,6 @@ $(TARGET): $(OBJS) gcd.o
 # Compile .c files into .o files
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-
 # Clean build artifacts
 clean:
 	rm -f $(OBJS) gcd.o $(TARGET)
