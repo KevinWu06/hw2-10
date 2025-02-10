@@ -21,4 +21,4 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 # Clean build artifacts
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(TARGET).exe
